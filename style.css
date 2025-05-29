@@ -1,0 +1,266 @@
+/* reset i podstawy */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* header */
+.top-bar {
+    background: #111;
+    color: #fff;
+    padding: 5px 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 15px 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.language-select {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #c00;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    padding: 5px 10px;
+    transition: background 0.3s;
+}
+
+.nav-links a:hover {
+    background: #eee;
+    border-radius: 5px;
+}
+
+
+
+.btn:hover {
+    background: #333;
+}
+
+/* hero */
+.hero {
+    display: flex;
+    flex-direction: left;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+    height: 500px;
+    background-image: url(images/background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    color: #222;
+}
+
+.hero-text h2 {
+    font-size: 24px;
+    color: #444;
+    margin: 10px 0;
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: #666;
+}
+
+.hero-img {
+    width: 100%;
+    height: 300px;
+    margin-top: 30px;
+}
+
+/* sekcja uslugi */
+.services {
+    padding: 60px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.service-box {
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+
+/* sekcja o nas */
+.about {
+    padding: 60px 20px;
+    background: #d3d3d3;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #555;
+}
+
+/* kontakt */
+.contact {
+    padding: 60px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: auto;
+    gap: 15px;
+}
+
+.contact input,
+.contact textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact button {
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact button:hover {
+    background: #333;
+}
+
+/* footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    color: #fff;
+    margin-top: 30px;
+}
+
+#myBtn {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Fixed/sticky position */
+    bottom: 40px;
+    /* Place the button at the bottom of the page */
+    right: 50px;
+    /* Place the button 30px from the right */
+    z-index: 99;
+    /* Make sure it does not overlap */
+    border: none;
+    /* Remove borders */
+    outline: none;
+    /* Remove outline */
+    background-color: red;
+    /* Set a background color */
+    color: white;
+    /* Text color */
+    cursor: pointer;
+    /* Add a mouse pointer on hover */
+    padding: 15px 20px;
+    /* Some padding */
+    border-radius: 10px;
+    /* Rounded corners */
+    font-size: 18px;
+    /* Increase font size */
+}
+
+#myBtn:hover {
+    background-color: #555;
+    /* Add a dark-grey background on hover */
+}
+
+/* responsywnosc */
+@media (min-width: 768px) {
+
+    .services,
+    .about,
+    .contact {
+        padding: 80px;
+    }
+
+    .service-box-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .hero {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .hero-text {
+        max-width: 500px;
+    }
+
+    .hero-img {
+        width: 400px;
+        height: 300px;
+        border-radius: 10px;
+    }
+    #myBtn {
+        display: none;
+    }
+}
