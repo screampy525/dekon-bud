@@ -13,8 +13,8 @@
 <body>
   <header>
     <div class="top-bar">
-      <span id="phone-text"><i class="fa-solid fa-phone"></i> Telefon: <a href="tel:123-456-789">123 456 789 | </a></span>
-      <span id="email-text"><i class="fa-solid fa-envelope"></i> Email: <a href="mailto:kontakt@dakon-bud.pl">kontakt@dakon-bud.pl</a></span>
+      <span><i class="fa-solid fa-phone"></i> <span id="phone-label">Telefon:</span> <a href="tel:123-456-789">123 456 789 | </a></span>
+      <span><i class="fa-solid fa-envelope"></i> <span id="email-label">Email:</span> <a href="mailto:kontakt@dakon-bud.pl">kontakt@dakon-bud.pl</a></span>
     </div>
     <nav class="navbar">
       <div class="logo">DAKON-BUD</div>
@@ -35,45 +35,45 @@
   <section class="hero">
     <div class="hero-text">
       <h1>DAKON-BUD</h1>
-      <h2>ZAKŁAD USŁUG BUDOWLANYCH</h2>
-      <p>Działamy od 2003 roku</p>
+      <h2 id="hero-title">ZAKŁAD USŁUG BUDOWLANYCH</h2>
+      <p id="hero-desc">Działamy od 2003 roku</p>
     </div>
-    <div class="hero-img"> <!-- kolorowy blok --> </div>
+    <div class="hero-img"> </div>
   </section>
 
   <section id="uslugi" class="services">
-    <h2>ZAKRES USłUG BUDOWLANYCH</h2>
+    <h2 id="services-title">ZAKRES USŁUG BUDOWLANYCH</h2>
     <div class="service-box-container">
       <div class="service-box">
         <i class="fa-solid fa-trowel" style="font-size: 100px;"></i>
-        <h1>Wykończenia wnętrz</h1>
+        <h1 id="service1-title">Wykończenia wnętrz</h1>
       </div>
       <div class="service-box">
         <i class="fa-solid fa-person-digging" style="font-size: 100px;"></i>
-        <h1>Remonty i modernizacja</h1>
+        <h1 id="service2-title">Remonty i modernizacja</h1>
       </div>
       <div class="service-box">
         <i class="fa-solid fa-bolt" style="font-size: 100px;"></i>
-        <h1>Montaż instalacji elektrycznych</h1>
+        <h1 id="service3-title">Montaż instalacji elektrycznych</h1>
       </div>
     </div>
   </section>
 
   <section id="o-nas" class="about">
-    <h2>O NAS</h2>
-    <p>Stanex-Bud to firma z wieloletnim doświadczeniem w branży budowlanej. Zajmujemy się kompleksowymi remontami,
+    <h2 id="about-title">O NAS</h2>
+    <p id="about-text">Stanex-Bud to firma z wieloletnim doświadczeniem w branży budowlanej. Zajmujemy się kompleksowymi remontami,
       wykończeniami wnętrz oraz sprzedażą materiałów budowlanych. Działamy na rynku nieprzerwanie od 1993 roku, oferując
       usługi najwyższej jakości.</p>
   </section>
 
   <section id="kontakt" class="contact">
-    <h2>Kontakt</h2>
+    <h2 id="contact-title">Kontakt</h2>
     <form  action="https://api.web3forms.com/submit" method="POST">
-      <input type="text" placeholder="Imię i nazwisko" required />
-      <input type="email" placeholder="Email" required />
-      <textarea rows="5" placeholder="Wiadomość" required></textarea>
+      <input type="text" id="form-name" placeholder="Imię i nazwisko" required />
+      <input type="email" id="form-email" placeholder="Email" required />
+      <textarea rows="5" id="form-msg" placeholder="Wiadomość" required></textarea>
       <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-      <button type="submit">Wyślij</button>
+      <button type="submit" id="form-btn">Wyślij</button>
     </form>
   </section>
 
