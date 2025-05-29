@@ -81,7 +81,7 @@ ul {
     text-align: center;
     padding: 60px 20px;
     height: 500px;
-    background-image: url(images/background.jpg);
+    background-image: url(/images/background.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
