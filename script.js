@@ -26,12 +26,14 @@ document.addEventListener("DOMContentLoaded", () => {
       uslugi: "Usługi",
       onas: "O nas",
       kontakt: "Kontakt",
-      btn: "Skontaktuj się",
       heroTitle: "ZAKŁAD USŁUG BUDOWLANYCH",
       heroDesc: "Działamy od 2003 roku",
-      servicesTitle: "KOMPLEKSOWE USŁUGI REMONTOWE",
+      servicesTitle: "ZAKRES USŁUG BUDOWLANYCH",
+      service1: "Wykończenia wnętrz",
+      service2: "Remonty i modernizacja",
+      service3: "Montaż instalacji elektrycznych",
       aboutTitle: "O NAS",
-      aboutText: "Stanex-Bud to firma z wieloletnim doświadczeniem...",
+      aboutText: "Stanex-Bud to firma z wieloletnim doświadczeniem w branży budowlanej. Zajmujemy się kompleksowymi remontami, wykończeniami wnętrz oraz sprzedażą materiałów budowlanych. Działamy na rynku nieprzerwanie od 1993 roku, oferując usługi najwyższej jakości.",
       contactTitle: "Kontakt",
       formName: "Imię i nazwisko",
       formEmail: "Email",
@@ -45,12 +47,14 @@ document.addEventListener("DOMContentLoaded", () => {
       uslugi: "Services",
       onas: "About Us",
       kontakt: "Contact",
-      btn: "Contact Us",
       heroTitle: "CONSTRUCTION SERVICES COMPANY",
       heroDesc: "Operating since 2003",
-      servicesTitle: "COMPREHENSIVE RENOVATION SERVICES",
+      servicesTitle: "SCOPE OF CONSTRUCTION SERVICES",
+      service1: "Interior finishing",
+      service2: "Renovations and modernization",
+      service3: "Electrical installations",
       aboutTitle: "ABOUT US",
-      aboutText: "Stanex-Bud is a company with many years of experience...",
+      aboutText: "Stanex-Bud is a company with many years of experience in the construction industry. We provide comprehensive renovations, interior finishing, and sales of building materials. We have been continuously operating on the market since 1993, offering services of the highest quality.",
       contactTitle: "Contact",
       formName: "Full name",
       formEmail: "Email",
@@ -61,28 +65,40 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const langSelect = document.querySelector(".language-select");
-  langSelect.addEventListener("change", (e) => {
-    const lang = e.target.value;
+
+  // Funkcja do stosowania tłumaczeń
+  function applyTranslations(lang) {
     const t = translations[lang];
 
-    document.querySelector("#phone-text").childNodes[1].nodeValue = " " + t.phone + " ";
-    document.querySelector("#email-text").childNodes[1].nodeValue = " " + t.email + " ";
+    document.getElementById("phone-label").textContent = t.phone;
+    document.getElementById("email-label").textContent = t.email;
+
     document.querySelector('a[href="#uslugi"]').textContent = t.uslugi;
     document.querySelector('a[href="#o-nas"]').textContent = t.onas;
     document.querySelector('a[href="#kontakt"]').textContent = t.kontakt;
-    document.querySelector(".btn").textContent = t.btn;
-    document.querySelector(".hero h2").textContent = t.heroTitle;
-    document.querySelector(".hero p").textContent = t.heroDesc;
-    document.querySelector("#uslugi h2").textContent = t.servicesTitle;
-    document.querySelector("#o-nas h2").textContent = t.aboutTitle;
-    document.querySelector("#o-nas p").textContent = t.aboutText;
-    document.querySelector("#kontakt h2").textContent = t.contactTitle;
-    document.querySelector(".footer").innerHTML = t.footer
+    document.getElementById("hero-title").textContent = t.heroTitle;
+    document.getElementById("hero-desc").textContent = t.heroDesc;
+    document.getElementById("services-title").textContent = t.servicesTitle;
+    document.getElementById("service1-title").textContent = t.service1;
+    document.getElementById("service2-title").textContent = t.service2;
+    document.getElementById("service3-title").textContent = t.service3;
+    document.getElementById("about-title").textContent = t.aboutTitle;
+    document.getElementById("about-text").textContent = t.aboutText;
+    document.getElementById("contact-title").textContent = t.contactTitle;
+    document.querySelector(".footer").innerHTML = t.footer;
 
-    const inputs = document.querySelectorAll("form input, form textarea");
-    inputs[0].placeholder = t.formName;
-    inputs[1].placeholder = t.formEmail;
-    inputs[2].placeholder = t.formMsg;
-    document.querySelector("form button").textContent = t.formBtn;
+    document.getElementById("form-name").placeholder = t.formName;
+    document.getElementById("form-email").placeholder = t.formEmail;
+    document.getElementById("form-msg").placeholder = t.formMsg;
+    document.getElementById("form-btn").textContent = t.formBtn;
+  }
+
+  // Wywołaj funkcję tłumaczenia podczas ładowania strony, używając aktualnie wybranego języka
+  applyTranslations(langSelect.value);
+
+  // Dodaj nasłuchiwanie na zmianę języka
+  langSelect.addEventListener("change", (e) => {
+    const lang = e.target.value;
+    applyTranslations(lang);
   });
 });
